@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_1_PNUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="PNUI 8891 | Assignment-1" Height="768" Width="1024" ResizeMode="NoResize">
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top Dock-->
+        <DockPanel Grid.Row="0" Margin="5" Height="24">
+            <TextBlock DockPanel.Dock="Left" Height="24" VerticalAlignment="Center" 
+                       TextAlignment="Center" Foreground="DarkBlue" FontWeight="Bold" FontFamily="Segoe UI" 
+                       FontSize="16" >PNUI - Assignment 1 - Kinect Application</TextBlock>
+        </DockPanel>     
+                
+        <!-- Main Area-->
+        <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Center">
+            <Image Name="Image" Stretch="Uniform" Width="640" Height="480" ></Image>
+        </Viewbox>
+        <StatusBar Grid.Row="3" Name="StatusBar"  Height="36" Padding="0">
+            <StatusBarItem Padding="0">
+                <Label Width="Auto" Height="32" FontWeight="Bold" FontSize="16" >Kinect Sensor Status: </Label>                
+            </StatusBarItem>
+            <StatusBarItem Padding="15 0 0 0 ">
+                <Label Name="SensorStatus" Foreground="White" Background="Red" Width="Auto" Height="32" FontWeight="Bold" FontSize="16">Disconnected</Label>
+            </StatusBarItem>
+            <StatusBarItem>
+            </StatusBarItem>
+            
+            <!-- For shape recognition -->
+            <StatusBarItem Padding="15 0 0 0">
+                <Label Width="Auto" Height="32" FontWeight="Bold" FontSize="16">Recognized Shape:</Label>                
+            </StatusBarItem>
+            <StatusBarItem Padding="15 0 0 0">
+                <Label Name="RecognizedShape" Width="Auto" Height="32" FontWeight="Bold" FontSize="16"></Label>
+            </StatusBarItem>
+
+            <!-- For Depth information -->
+            <StatusBarItem Padding="15 0 0 0">
+                <Label Width="Auto" Height="32" FontWeight="Bold" FontSize="16">Color:</Label>
+            </StatusBarItem>
+            <StatusBarItem Padding="15 0 0 0">
+                <Label Name="ShapeColor" Width="Auto" Height="32" FontWeight="Bold" FontSize="16"></Label>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>
